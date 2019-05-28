@@ -1,23 +1,3 @@
-# import tkinter as tk
-#
-# mainwindow=tk.Tk()
-# mainwindow.title('sample window')
-# heading_label=tk.Label(mainwindow,text='hello world')
-# heading_label.pack()
-#
-# name_field=tk.Entry(mainwindow)
-# name_field.pack()
-#
-# def takevalueinput():
-#     name=name_field.get()
-#     print(name)
-#
-# button=tk.Button(mainwindow,text='Get value',command=lambda: takevalueinput())
-# button.pack()
-# mainwindow.mainloop()
-
-
-
 import tkinter as tk
 
 mainwindow=tk.Tk()
@@ -53,10 +33,11 @@ def multiplication():
 def division():
     num1=float(first.get())
     num2=float(second.get())
-    if (num2!=0):
-        result=float((num1/num2))
+    if (num2==0):
+        result_label.config(text='invalid input "cannot divide" second number is 0 ')
+    else:
+        result = float((num1 / num2))
         result_label.config(text='operation result is' + str(result))
-
 
 label2=tk.Label(mainwindow,text='operations')
 label2.pack()
